@@ -26,9 +26,8 @@
 - MVC 패턴 : 화면, 처리, 데이터 분야를 각 담당자별로 나누는 기법
 
 - 정리
-
   <br>
-
+  
   클라이언트 :
   http://localhost:8080/hi   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;
