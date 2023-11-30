@@ -118,9 +118,19 @@
 
 ### 게시판
 
-- DTO : Form Data,를 받는 객체
-- 
+<details>
+  <summary> tip</summary>   
+   
+   - DTO : Form Data,를 받는 객체
+
+</details>
+
+
 1. Form 데이터 주고받기 : HTML Form Data를 주고 받기
+   - form (method = "post", action = "article/create)
+     1. action = 전송 대상
+     2. method = 전송 방식
+     3. 변수명 = name 속성 사용 &rarr; dto 연결
 
 
 
