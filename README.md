@@ -4,6 +4,7 @@
 1. [WebService 동작 원리](#web-service-동작원리)
 2. [Vue Templete & MVC Patten](#vue-템플릿-과-mvc-패턴)
 3. [layout 나누기](#layout-나누기-)
+4. [게시판](#게시판)
 
 [//]: # (| Week | 학습여부   | 커리큘럼 내용                                 |)
 
@@ -102,16 +103,24 @@
 - herder : 사이트 안내 (네비게이션) 
 - footer : 사이트 정보 (site info)
 
-  ![img_2.png](img_2.png)
+  <img src="img_2.png" width="700" height="250">
+  
 
-- 템플릿화   
-   ![img_3.png](img_3.png)  
+- 템플릿화 
+   
+  <img src="img_3.png" width="400" height = "200"> <br> 
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr; 
+  
+  <br>
+  <img src="img_4.png" width="700" height = "150">
+ 
 
-  ![img_4.png](img_4.png)
+### 게시판
 
-
+- DTO : Form Data,를 받는 객체
+- 
+1. Form 데이터 주고받기 : HTML Form Data를 주고 받기
 
 
 
