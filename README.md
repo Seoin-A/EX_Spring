@@ -119,18 +119,40 @@
 ### 게시판
 
 <details>
-  <summary> tip</summary>   
-   
-   - DTO : Form Data,를 받는 객체
+  <summary> tip</summary>
+
+  - DTO : Form Data,를 받는 객체
+  - jpa : java 언어를 DB가 인식할 수 있도록 할 뿐만 아니라 관리도 할 수 있음
+  - Entity : java 객체를 DB가 이해할 수 있게 잘 규격화된 데이터
+  - Repository : DB 저장
 
 </details>
 
+<br>
 
 1. Form 데이터 주고받기 : HTML Form Data를 주고 받기
    - form (method = "post", action = "article/create)
      1. action = 전송 대상
      2. method = 전송 방식
      3. 변수명 = name 속성 사용 &rarr; dto 연결
+   
+<br>
+
+2. DB와 JPA
+
+    <img src="img_6.png" width = "900" hight="200">
+   
+   [Dto]()
+3. 
+   1. Dto를 Entity로 변환한다. 
+      ```
+       Article article = form.toEntity();  
+      ```
+   2. 변환한 Entity를 Repository에게 저장하게 한다.
+      ```
+      Article saved = articleRepository.save(article);
+      ```
+
 
 
 
