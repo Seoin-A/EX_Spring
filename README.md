@@ -49,9 +49,7 @@
 
 <br>
 
-- MVC 역할 
-
-  <br>
+- MVC 역할    
   
   클라이언트 :
   http://localhost:8080/hi   
