@@ -139,9 +139,7 @@
 2. DB와 JPA
 
     <img src="img_6.png" width = "900" hight="200">
-   
-   [Dto]()
-3. 
+
    1. Dto를 Entity로 변환한다. 
       ```
        Article article = form.toEntity();  
