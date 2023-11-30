@@ -93,7 +93,7 @@
 
   <br>
 
-  ![img.png](img.png)
+  ![img.png](img//img.png)
 
 </details>
 
@@ -101,17 +101,17 @@
 - herder : 사이트 안내 (네비게이션) 
 - footer : 사이트 정보 (site info)
 
-  <img src="img_2.png" width="700" height="250">
+  <img src="img/img_2.png" width="700" height="250">
   
 
 - 템플릿화 
    
-  <img src="img_3.png" width="400" height = "200"> <br> 
+  <img src="img/img_3.png" width="400" height = "200"> <br> 
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr; 
   
   <br>
-  <img src="img_4.png" width="700" height = "150">
+  <img src="img/img_4.png" width="700" height = "150">
  
 
 ### 게시판
@@ -138,7 +138,7 @@
 
 2. DB와 JPA
 
-    <img src="img_6.png" width = "900" hight="200">
+    <img src="img/img_6.png" width = "900" hight="200">
 
    1. Dto를 Entity로 변환한다. 
       ```
