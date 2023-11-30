@@ -3,7 +3,7 @@
 ## 목차
 1. [WebService 동작 원리](#web-service-동작원리)
 2. [Vue Templete & MVC Patten](#vue-템플릿-과-mvc-패턴)
-
+3. [layout 나누기](#layout-나누기-)
 
 [//]: # (| Week | 학습여부   | 커리큘럼 내용                                 |)
 
@@ -30,7 +30,7 @@
 - 클라이언트 : 서비스를 사용하는 프로그램 또는 컴퓨터
 - 서버 : 서비스를 제공하는 프로그램 또는 컴퓨터  
 
-&rarr;
+&nbsp; &rarr;
 클라이언트가 서버에 요청을 하게 되면 서버는 해당 요청을 응답으로 전해준다.
 
 ### Vue 템플릿과 MVC 역할
@@ -98,9 +98,18 @@
 
 </details>
 
+### layout 나누기 
+- herder : 사이트 안내 (네비게이션) 
+- footer : 사이트 정보 (site info)
 
+  ![img_2.png](img_2.png)
 
+- 템플릿화   
+   ![img_3.png](img_3.png)  
 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;
+
+  ![img_4.png](img_4.png)
 
 
 
