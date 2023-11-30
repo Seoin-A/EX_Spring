@@ -5,6 +5,27 @@
 2. [Vue Templete & MVC Patten](#vue-템플릿-과-mvc-패턴)
 
 
+[//]: # (| Week | 학습여부   | 커리큘럼 내용                                 |)
+
+[//]: # (| ----- |--------|-----------------------------------------|)
+
+[//]: # (| 1주차 | ☑️     | iOS 기초, H.I.G를 통한 컴포넌트의 이해, 화면 전환       |)
+
+[//]: # (| 2주차 | ☑️     | Autolayout을 통한 기초 UI구성, Scroll View의 이해 |)
+
+[//]: # (| 3주차 | ☑️     | TableView, CollectionView, 데이터 전달 방식    |)
+
+[//]: # (| 4주차 | ☑️     | Cocoapods & Networking + 솝커톤 전 보충 세미나   |)
+
+[//]: # (| 5주차 |        | 디자인 합동 세미나                              |)
+
+[//]: # (| 6주차 |        | 서버 합동 세미나 + 솝커톤                         |)
+
+[//]: # (| 7주차 |        | 클론 코딩을 통한 실전 UI 구성, Animation, 통신 보충    |)
+
+[//]: # (| 8주차 |        | e기획 경선 + 앱잼 전 보충 세미나 + 앱스토어 배포 가이드      |)
+
+
 ### Web Service 동작원리
 - 클라이언트 : 서비스를 사용하는 프로그램 또는 컴퓨터
 - 서버 : 서비스를 제공하는 프로그램 또는 컴퓨터  
@@ -12,7 +33,7 @@
 &rarr;
 클라이언트가 서버에 요청을 하게 되면 서버는 해당 요청을 응답으로 전해준다.
 
-### Vue 템플릿과 MVC 패턴
+### Vue 템플릿과 MVC 역할
 <details>
 <summary>자세히 보기</summary>
 
@@ -25,12 +46,15 @@
 
 - MVC 패턴 : 화면, 처리, 데이터 분야를 각 담당자별로 나누는 기법
 
-- 정리
+<br>
+
+- MVC 역할 
+
   <br>
   
   클라이언트 :
   http://localhost:8080/hi   
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &darr;
   ```java
   @Controller
   public class FirstController {
@@ -42,7 +66,7 @@
     }
   }
   ```
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &darr;
   <table>
   <tr>
     <td>key</td>
@@ -51,7 +75,7 @@
   <tr><td>username</td><td>seoin</td></tr>
   </table>
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &darr;
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &darr;
   ```html
   <html>
   <head>
@@ -66,13 +90,19 @@
   </body>
   </html>
   ```
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &darr;
 
   <br>
 
   ![img.png](img.png)
 
 </details>
+
+
+
+
+
+
 
 
 
