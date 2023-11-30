@@ -148,6 +148,17 @@
       ```
       Article saved = articleRepository.save(article);
       ```
+  
+   3. h2 연결 접속 설정 ()
+      - application.properties
+         ```
+         # h2 DB, 웹 콘솔 접근 허용
+         spring.h2.console.enabled=true
+         ```
+      
+      - web :  http://localhost:8080/h2-console (IntelJ console에서 jdbc 경로 확인) 
+        
+            
 
 
 
