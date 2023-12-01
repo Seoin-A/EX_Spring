@@ -1,4 +1,4 @@
-# EX_Spring
+# EX_Spring (출처: [개념은 호옹~, 실습 빡] 스프링 부트, 입문!-흥팍)
 
 ## 목차
 1. [WebService 동작 원리](#web-service-동작원리)
