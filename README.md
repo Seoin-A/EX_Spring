@@ -149,7 +149,7 @@
       Article saved = articleRepository.save(article);
       ```
   
-   3. h2 연결 접속 설정 ()
+   3. h2 연결 접속 설정 
       - application.properties
          ```
          # h2 DB, 웹 콘솔 접근 허용
@@ -158,7 +158,11 @@
       
       - web :  http://localhost:8080/h2-console (IntelJ console에서 jdbc 경로 확인) 
         
-            
+<br>
+
+3. Refactoring & Logging
+    - Entity, Dto Lombok으로 대체
+    - Logging : @Slf4j (Controller)
 
 
 
