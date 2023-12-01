@@ -9,7 +9,7 @@
    1. [Form](#1-form-데이터-주고받기--html-form-data를-주고-받기)
    2. [DB와 JPA](#2-db와-jpa)
    3. [Refacoring & Logging](#3-refactoring--logging)
-   4. [Data 조회](#4-data-조회)
+   4. [Data 조회](#4-Data-조회)
    5. [Data 목록 조회](#5-data-목록-조회)
    6. [Link & redirect](#6-link--redirect)
    7. [데이터 수정 - 수정 Form](#7-수정-form)
@@ -161,7 +161,7 @@
         log.info(article.toString());
         ```
 
-#### 4.  Data 조회
+#### 4. Data 조회
 
 <img src="img/img_7.png" width="700" height="200">
 
