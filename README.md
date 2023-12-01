@@ -11,26 +11,7 @@
    4. [Data 조회](#4-data-조회)
    5. [Data 목록 조회](#5-data-목록-조회)
    6. [Link & redirect](#6-link--redirect-)
-
-[//]: # (| Week | 학습여부   | 커리큘럼 내용                                 |)
-
-[//]: # (| ----- |--------|-----------------------------------------|)
-
-[//]: # (| 1주차 | ☑️     | iOS 기초, H.I.G를 통한 컴포넌트의 이해, 화면 전환       |)
-
-[//]: # (| 2주차 | ☑️     | Autolayout을 통한 기초 UI구성, Scroll View의 이해 |)
-
-[//]: # (| 3주차 | ☑️     | TableView, CollectionView, 데이터 전달 방식    |)
-
-[//]: # (| 4주차 | ☑️     | Cocoapods & Networking + 솝커톤 전 보충 세미나   |)
-
-[//]: # (| 5주차 |        | 디자인 합동 세미나                              |)
-
-[//]: # (| 6주차 |        | 서버 합동 세미나 + 솝커톤                         |)
-
-[//]: # (| 7주차 |        | 클론 코딩을 통한 실전 UI 구성, Animation, 통신 보충    |)
-
-[//]: # (| 8주차 |        | e기획 경선 + 앱잼 전 보충 세미나 + 앱스토어 배포 가이드      |)
+   7. [데이터 변경 - 수정 Fomr](#수정 Form)
 
 
 ### Web Service 동작원리
@@ -269,3 +250,39 @@
   <br>
   &nbsp;&nbsp;&nbsp;&nbsp;<img src="img/img_11.png" width="400" height="500">
 
+#### 7. 수정 Form
+<img src="img/img_12.png" width="800" height="300">
+
+- controller
+
+   ```    
+    // 수정할 데이터 가져오기
+        Article articleEntity = articleRepository.findById(id).orElse(null);
+
+     // 모델에 데이터 등록
+        m.addAttribute("article",articleEntity);
+
+    // view page 설정
+        return "articles/edit";
+    ```
+
+<br> 
+
+- html : {{#modelVariable}}로 감싸주면 모델 변수를 바로 사용 가능하다. 
+    ```
+    <form class="container" action="" method="post">
+        {{#article}}
+            <div class="mb-3">
+                <label class="form-label">제목</label>
+                <input name="title" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">내용</label>
+                <textarea name="content" class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit">수정하기</button>
+            <a href="/articles/{{article.id}}"> Back </a>
+        {{/article}}
+    </form>
+    ```
+<br>

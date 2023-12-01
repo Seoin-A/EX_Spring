@@ -79,4 +79,18 @@ public class ArticleController {
         return "articles/index"; // articles/index.mustache
     }
 
+    /* Edit Data 수정하기 */
+    @GetMapping("/articles/{id}/edit")
+    public String edit(@PathVariable(name = "id") Long id, Model m){
+
+        // 수정할 데이터 가져오기
+        Article articleEntity = articleRepository.findById(id).orElse(null);
+
+        // 모델에 데이터 등록
+        m.addAttribute("article",articleEntity);
+
+        // view page 설정
+        return "articles/edit";
+    }
+
 }
