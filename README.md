@@ -10,6 +10,7 @@
    3. [Refacoring & Logging](#3-refactoring--logging)
    4. [Data 조회](#4-data-조회)
    5. [Data 목록 조회](#5-data-목록-조회)
+   6. [Link & redirect](#6-link--redirect-)
 
 [//]: # (| Week | 학습여부   | 커리큘럼 내용                                 |)
 
@@ -246,8 +247,25 @@
     {{/articleList}}
     </tbody>
     ```
+<br>
 
+#### 6. Link & redirect 
 
+<img src="img/img_10.png" width="900" height = "500">
+<b>페이지 간의 이동을 연결한다</b>.
 
+<br>
 
+- Link : 
+  - for Request (보다 편리한 요청)
+  - 미리 정해놓은 요청을 간편히 전송
+  - `<a></a>` `<form></form>`
+  
+<br>
+  
+- Redirect : for Response (보다 편리한 응답)
+  - 클라이언트에게 재 요청을 지시한다
+
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<img src="img/img_11.png" width="400" height="500">
 

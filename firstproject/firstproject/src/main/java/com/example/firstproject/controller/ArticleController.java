@@ -42,7 +42,7 @@ public class ArticleController {
 
         log.info(saved.toString());
 
-        return "";
+        return "redirect:/articles/" + saved.getId();
     }
 
     /* 1개의 data select */
