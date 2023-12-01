@@ -11,7 +11,8 @@
    4. [Data 조회](#4-data-조회)
    5. [Data 목록 조회](#5-data-목록-조회)
    6. [Link & redirect](#6-link--redirect-)
-   7. [데이터 변경 - 수정 Fomr](#수정 Form)
+   7. [데이터 수정 - 수정 Form](#7-수정-form)
+   8. [데이터 수정 - db Form](#8-db-수정)
 
 
 ### Web Service 동작원리
@@ -161,7 +162,7 @@
 
 #### 4.  Data 조회
 
-<img src="img/img7.png" width="700" height="200">
+<img src="img/img_7.png" width="700" height="200">
 
 1. PathVariable 
     ```
@@ -232,7 +233,8 @@
 
 #### 6. Link & redirect 
 
-<img src="img/img_10.png" width="900" height = "500">
+<img src="img/img_10.png" width="800" height = "450">
+
 <b>페이지 간의 이동을 연결한다</b>.
 
 <br>
@@ -286,3 +288,40 @@
     </form>
     ```
 <br>
+
+#### 8. DB 수정
+
+<img src="img/img_12.png" width="800" height="300">
+
+1. sql dumeValue 값 자동 생성 (propertices)
+
+        ```
+        spring.jpa.defer-datasource-initialization=true
+        ```
+2. controller
+
+   ```
+   public String update(ArticleForm form){
+        log.info(form.toString());
+
+        // 1. dto를 entity로 변환
+        Article articleEntity = form.toEntity();
+
+        // 2. entity를 DB에 저장
+        // 2-1 : DB에서 기존 데이터를 가져온다
+        Article target = articleRepository.findById(articleEntity.getId()).orElse(null);
+
+        // 2-1 : 기존 데이터에 값을 갱신한다
+
+        if(target != null){
+            articleRepository.save(articleEntity);
+            log.info("성공");
+        }
+        // 3. 수정 결과 페이지로 redirect
+        return "redirect:/articles/" + articleEntity.getId();
+    }
+    ```
+
+<br> 
+
+  
