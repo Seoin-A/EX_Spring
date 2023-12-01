@@ -4,14 +4,14 @@
 ## 목차
 1. [WebService 동작 원리](#web-service-동작원리)
 2. [Vue Templete & MVC Patten](#vue-템플릿과-mvc-역할)
-3. [layout 나누기](#layout-나누기-)
+3. [layout 나누기](#layout-나누기)
 4. [게시판](#게시판)
    1. [Form](#1-form-데이터-주고받기--html-form-data를-주고-받기)
    2. [DB와 JPA](#2-db와-jpa)
    3. [Refacoring & Logging](#3-refactoring--logging)
    4. [Data 조회](#4-data-조회)
    5. [Data 목록 조회](#5-data-목록-조회)
-   6. [Link & redirect](#6-link--redirect-)
+   6. [Link & redirect](#6-link--redirect)
    7. [데이터 수정 - 수정 Form](#7-수정-form)
    8. [데이터 수정 - db Form](#8-db-수정)
 
@@ -86,7 +86,7 @@
 
 </details>
 
-### layout 나누기 
+### layout 나누기
 - herder : 사이트 안내 (네비게이션) 
 - footer : 사이트 정보 (site info)
 
@@ -232,7 +232,7 @@
     ```
 <br>
 
-#### 6. Link & redirect 
+#### 6. Link & redirect
 
 <img src="img/img_10.png" width="800" height = "450">
 
