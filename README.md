@@ -2,7 +2,7 @@
 
 ## 목차
 1. [WebService 동작 원리](#web-service-동작원리)
-2. [Vue Templete & MVC Patten](#vue-템플릿-과-mvc-패턴)
+2. [Vue Templete & MVC Patten](#vue-템플릿과-mvc-역할)
 3. [layout 나누기](#layout-나누기-)
 4. [게시판](#게시판)
    1. [Form](#1-form-데이터-주고받기--html-form-data를-주고-받기)
