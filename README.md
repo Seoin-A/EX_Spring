@@ -9,6 +9,7 @@
    2. [DB와 JPA](#2-db와-jpa)
    3. [Refacoring & Logging](#3-refactoring--logging)
    4. [Data 조회](#4-data-조회)
+   5. [Data 목록 조회](#5-data-목록-조회)
 
 [//]: # (| Week | 학습여부   | 커리큘럼 내용                                 |)
 
@@ -178,9 +179,7 @@
 
 #### 4.  Data 조회
 
-
 <img src="img/img7.png" width="700" height="200">
-
 
 1. PathVariable 
     ```
@@ -212,6 +211,43 @@
          {{/article}}
        </tbody>
        ```
+
+#### 5. Data 목록 조회
+<img src="img/img_8.png" width="700" height="200">
+
+- controller
+
+   ```    
+    /*      1. 모든 Article을 가져온다. (반환값 주의)
+            - List<Article> articleEntityList =  (List<Article>) articleRepository.findAll();
+            - Iterable<Article> articleEntityList =  articleRepository.findAll();
+            - @Override
+              ArrayList<Article> findAll();
+    */
+            List<Article> articleEntityList =  articleRepository.findAll();
+
+            // 2. 가져온 Article 묶음을 뷰로 전달
+            m.addAttribute("articleList",articleEntityList);
+
+            // 3. 뷰 페이지 설정
+            return "articles/index"; // articles/index.mustache
+    ```
+    <img src="img/img_9.png" width="700" height="400">
+
+- html : List의 형태로 복수개가 담겨있을 경우 반복해서 출력한다.
+    ```
+    <tbody>
+    {{#articleList}}
+        <tr>
+            <th>{{id}}</th>
+            <td>{{title}}</td>
+            <td>{{content}}</td>
+        </tr>
+    {{/articleList}}
+    </tbody>
+    ```
+
+
 
 
 

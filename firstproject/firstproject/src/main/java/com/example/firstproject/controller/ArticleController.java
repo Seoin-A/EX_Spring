@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -25,6 +27,7 @@ public class ArticleController {
         return "articles/new";
     }
 
+    /* 데이터 생성*/
     @PostMapping("/articles/create")
     public String createArticle(ArticleForm form){
 //        System.out.println("form = " + form.toString()); -> 로깅 기능으로 대체
@@ -42,6 +45,7 @@ public class ArticleController {
         return "";
     }
 
+    /* 1개의 data select */
     @GetMapping("/articles/{id}")
     public String show(@PathVariable(name = "id") Long id, Model m){
         log.info("id :"+id);
@@ -54,6 +58,25 @@ public class ArticleController {
 
         // 3. 보여줄 페이지 설정
         return "articles/show";
+    }
+
+    /* 여러개의 data select*/
+    @GetMapping("/articles")
+    public String index(Model m){
+
+/*      1. 모든 Article을 가져온다. (반환값 주의)
+            - List<Article> articleEntityList =  (List<Article>) articleRepository.findAll();
+            - Iterable<Article> articleEntityList =  articleRepository.findAll();
+            - @Override
+              ArrayList<Article> findAll();
+ */
+        List<Article> articleEntityList =  articleRepository.findAll();
+
+        // 2. 가져온 Article 묶음을 뷰로 전달
+        m.addAttribute("articleList",articleEntityList);
+
+        // 3. 뷰 페이지 설정
+        return "articles/index"; // articles/index.mustache
     }
 
 }
