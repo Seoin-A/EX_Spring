@@ -5,6 +5,9 @@
 2. [Vue Templete & MVC Patten](#vue-템플릿-과-mvc-패턴)
 3. [layout 나누기](#layout-나누기-)
 4. [게시판](#게시판)
+   1. [Form](#1-form-데이터-주고받기--html-form-data를-주고-받기)
+   2. [DB와 JPA](#2-db와-jpa)
+   3. [Refacoring & Logging](#3-refactoring--logging)
 
 [//]: # (| Week | 학습여부   | 커리큘럼 내용                                 |)
 
@@ -114,7 +117,7 @@
   <img src="img/img_4.png" width="700" height = "150">
  
 
-### 게시판
+## 게시판
 
 <details>
   <summary> tip</summary>
@@ -128,7 +131,7 @@
 
 <br>
 
-1. Form 데이터 주고받기 : HTML Form Data를 주고 받기
+#### 1. Form 데이터 주고받기 : HTML Form Data를 주고 받기
    - form (method = "post", action = "article/create)
      1. action = 전송 대상
      2. method = 전송 방식
@@ -136,7 +139,7 @@
    
 <br>
 
-2. DB와 JPA
+#### 2. DB와 JPA
 
     <img src="img/img_6.png" width = "900" hight="200">
 
@@ -160,12 +163,54 @@
         
 <br>
 
-3. Refactoring & Logging
-    - Entity, Dto Lombok으로 대체
-    - Logging : @Slf4j (Controller)
+#### 3. Refactoring & Logging
+    - Lombok : DTO, Entity 교체
+        ```
+        // 롬복 추가 코드
+       implementation 'org.projectlombok:lombok'
+       annotationProcessor 'org.projectlombok:lombok'
+        ```
+    - Logging : @Slf4j (Controller annotation)
+        ```
+        log.info(article.toString());
+        ```
+
+#### 4.  Data 조회
 
 
+<img src="img/img7.png" width="700" height="200">
 
+
+1. PathVariable 
+    ```
+    @GetMapping("/articles/{id}")
+     ```
+
+2. 조회 과정
+    - controller
+       ```
+           // 1. id로 데이터를 가져옴
+           Article articleEntity = articleRepository.findById(id).orElse(null); 
+           // -> data가 없을 경우 null을 반환한다.
+
+           // 2. 가져온 데이터를 모델에 등록
+           m.addAttribute("article",articleEntity);
+
+           // 3. 보여줄 페이지 설정
+           return "articles/show";
+       ```
+   - html : Model의 data를 가져온다
+       ```
+      <tbody>
+       {{#article}}
+          <tr>
+             <th>{{id}}</th>
+             <td>{{title}}</td>
+             <td>{{content}}</td>
+          </tr>
+         {{/article}}
+       </tbody>
+       ```
 
 
 
