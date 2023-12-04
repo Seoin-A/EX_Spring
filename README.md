@@ -1,7 +1,7 @@
 # EX_Spring 
 (출처: [개념은 호옹~, 실습 빡] 스프링 부트, 입문!-흥팍)
 
-## 목차
+# 목차
 1. [WebService 동작 원리](#web-service-동작원리)
 2. [Vue Templete & MVC Patten](#vue-템플릿과-mvc-역할)
 3. [layout 나누기](#layout-나누기)
@@ -16,16 +16,17 @@
    8. [데이터 수정 - db Form](#8-db-수정)
    9. [데이터 삭제](#9-data-삭제)
    10. [CRUD SQL query](#10-sql-query)
+5. [REST API & JSON](#rest-api--json)
 
 
-### Web Service 동작원리
+## Web Service 동작원리
 - 클라이언트 : 서비스를 사용하는 프로그램 또는 컴퓨터
 - 서버 : 서비스를 제공하는 프로그램 또는 컴퓨터  
 
 &nbsp; &rarr;
 클라이언트가 서버에 요청을 하게 되면 서버는 해당 요청을 응답으로 전해준다.
 
-### Vue 템플릿과 MVC 역할
+## Vue 템플릿과 MVC 역할
 <details>
 <summary>자세히 보기</summary>
 
@@ -88,7 +89,7 @@
 
 </details>
 
-### layout 나누기
+## layout 나누기
 - herder : 사이트 안내 (네비게이션) 
 - footer : 사이트 정보 (site info)
 
@@ -420,3 +421,25 @@
     where
         id=?
       ```
+   
+<br>
+
+## REST API & JSON
+
+#### REST API
+- 웹 서버의 자원을 클라이언트에 구애받지 않고 사용할 수 있도록 하는 설계 방식
+- HTTP를 통해 서버의 자원을 다루게 하는 기술
+    
+#### JSON과 XML
+- xml : 사용자 정의형 html
+- json : 자바스크립트 방식을 차용한 객체 표현식
+- exSite : https://jsonplaceholder.typicode.com/
+
+#### Status
+- 200 : 응답 성공
+- 201 : 데이터 생성 완료
+- 404 : 찾을 수 없는 페이지 요청
+- 500 : 서버 내부 에러 발생
+
+#### Test 확인
+<img src="img/img_15.png" width="340" height="500">
