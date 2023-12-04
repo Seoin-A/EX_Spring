@@ -335,16 +335,21 @@
 
 - controller
 
-   ```
+   ``` java
+    public String delete(@PathVariable Long id, RedirectAttributes rttr){
+
         // 1. 삭제 대상을 가져온다
         Article target = articleRepository.findById(id).orElse(null);
+        log.info(target.toString());
 
         // 2. 대상을 삭제한다
         if(target != null){
             articleRepository.delete(target);
             log.info("정상적으로 삭제되었습니다.");
+            rttr.addFlashAttribute("msg","삭제가 완료되었습니다.");
         }
 
         // 결과 페이지로 리다이렉트 한다
         return "redirect:/articles";
+    }
     ```
