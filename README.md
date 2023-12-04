@@ -15,6 +15,7 @@
    7. [데이터 수정 - 수정 Form](#7-수정-form)
    8. [데이터 수정 - db Form](#8-db-수정)
    9. [데이터 삭제](#9-data-삭제)
+   10. [CRUD SQL query](#10-sql-query)
 
 
 ### Web Service 동작원리
@@ -353,3 +354,69 @@
         return "redirect:/articles";
     }
     ```
+  
+#### 10. SQL Query
+1. Query : DB 수행 요청 구문
+2. Query Loggin 설정
+    ``` properties
+   # JPA 로깅 설정
+    logging.level.org.hibernate.SQL=DEBUG
+
+
+    # JPA 로깅 설정-log 정리
+    spring.jpa.properties.hibernate.format_sql=true
+
+
+    # JPA 로깅 설정-parameter 출력
+    logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+   ```
+3. H2 DB 고정값 설정  
+    ```properties
+    # H2 DB URL 고정 설정
+
+    # 유니크 URL 설정 off
+    spring.datasource.generate-unique-name=false
+    
+    # 고정 url 설정
+    spring.datasource.url=jdbc:h2:mem:testdb
+   ```
+
+4. 종류
+   1. select
+      ```sql
+           select
+              article0_.id as id1_0_0_,
+              article0_.content as content2_0_0_,
+              article0_.title as title3_0_0_ 
+           from
+              article article0_ 
+           where
+              article0_.id=?
+      ```
+   2. insert
+      ```sql
+       insert 
+       into
+           article
+           (id, content, title) 
+       values
+           (default, ?, ?)
+      ```
+    3. update
+      ```sql
+       update
+           article 
+       set
+           content=?,
+           title=? 
+       where
+           id=?
+      ```
+    4. delete
+      ```sql
+    delete
+    from
+        article
+    where
+        id=?
+      ```
