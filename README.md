@@ -509,4 +509,8 @@
        articleRepository.deleteById(id);
        return ResponseEntity.status(HttpStatus.OK).build();
        ```
+      
+    5. Test 내역
+   
+        <img src="img/img_21.png" width="500" height="200"> 
 
