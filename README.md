@@ -1,5 +1,5 @@
 # EX_Spring 
-(출처: [개념은 호옹~, 실습 빡] 스프링 부트, 입문!-흥팍)
+출처: [개념은 호옹~, 실습 빡] 스프링 부트, 입문!-흥팍
 
 # 목차
 1. [WebService 동작 원리](#web-service-동작원리)
@@ -17,6 +17,7 @@
    9. [데이터 삭제](#9-data-삭제)
    10. [CRUD SQL query](#10-sql-query)
 5. [REST API & JSON](#rest-api--json)
+6. [HTTP & RestController](#http--restcontroller)
 
 
 ## Web Service 동작원리
@@ -443,3 +444,69 @@
 
 #### Test 확인
 <img src="img/img_15.png" width="340" height="500">
+
+## Http & RestController
+
+#### HTTP 요청 구조
+
+1. 요청
+    <img src="img/img_17.png" width="900" height="400">
+2. 응답 
+    <img src="img/img_18.png" width="900" height="400">
+
+<br><br><br>
+
+
+#### RestAPI 설계
+<img src="img/img_19.png" width="900" height="400">
+<img src="img/img_20.png" width="900" height="300">
+
+1. RestController와 Controller의 차이 : 반환하는 타입이 다르다 (View page, JSON)
+2. RestAPI
+   1. Get : Controller 동일
+   2. Post
+       ```
+        @PostMapping("/articles")
+        public Article create(@RequestBody ArticleForm dto){
+             // @RequestBody 를 통해 Request의 body에 있는 내용을 ArticleForm에 담는다.
+             Article article = dto.toEntity();
+             return articleRepository.save(article);
+         }
+       ```
+   3. fatch
+      ``` 
+       // 1. 수정용 엔티티 생성
+       Article article = dto.toEntity();
+       log.info("id : {} , article : {}",id, article.toString());
+   
+       // 2. 대상 엔티티를 조회
+       Article target = articleRepository.findById(id).orElse(null);
+       
+       // 3. 잘못된 요청 처리 ( 대상이 없거나 id가 다른 경우 )
+       if(target == null || !id.equals(article.getId())){
+      
+       // 400, 잘못된 요청 응답
+           log.info("잘못된 요청 입니다 => id : {} , article : {}",id, article.toString());
+           return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+       // 4. 업데이트 및 정상 응답 (200)
+       target.patch(article);
+   
+       Article updated = articleRepository.save(target);
+       return ResponseEntity.status(HttpStatus.OK).body(updated);
+      ```
+   4. delete
+      ```
+       // 대상 찾기
+       Article target =  articleRepository.findById(id).orElse(null);
+   
+       // 잘못된 요청 처리
+       if(target == null){
+           return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+       }
+   
+       // 대상 삭제
+       articleRepository.deleteById(id);
+       return ResponseEntity.status(HttpStatus.OK).build();
+       ```
+
