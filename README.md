@@ -14,6 +14,7 @@
    6. [Link & redirect](#6-link--redirect)
    7. [데이터 수정 - 수정 Form](#7-수정-form)
    8. [데이터 수정 - db Form](#8-db-수정)
+   9. [데이터 삭제](#9-data-삭제)
 
 
 ### Web Service 동작원리
@@ -285,7 +286,7 @@
             </div>
             <button type="submit">수정하기</button>
             <a href="/articles/{{article.id}}"> Back </a>
-        {{/article}}
+         {{/article}}
     </form>
     ```
 <br>
@@ -325,4 +326,25 @@
 
 <br> 
 
-  
+#### 9. Data 삭제
+
+<img src="img/img_14.png" width="800" height="300">
+
+
+- addFlashAttributes : redirect 1회성 Data 등록
+
+- controller
+
+   ```
+        // 1. 삭제 대상을 가져온다
+        Article target = articleRepository.findById(id).orElse(null);
+
+        // 2. 대상을 삭제한다
+        if(target != null){
+            articleRepository.delete(target);
+            log.info("정상적으로 삭제되었습니다.");
+        }
+
+        // 결과 페이지로 리다이렉트 한다
+        return "redirect:/articles";
+    ```
