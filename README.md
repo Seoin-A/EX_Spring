@@ -18,6 +18,7 @@
    10. [CRUD SQL query](#10-sql-query)
 5. [REST API & JSON](#rest-api--json)
 6. [HTTP & RestController](#http--restcontroller)
+7. [Service 계층과 Transaction](#)
 
 
 ## Web Service 동작원리
@@ -514,3 +515,19 @@
    
         <img src="img/img_21.png" width="500" height="200"> 
 
+    <br>
+
+
+## Service 계층과 Transaction   
+
+#### Service 
+- Controller Repository 사이에 위치하는 계층
+- 처리 업무의 순서를 총괄
+
+    <img src="img/img_22.png" width="800" height="300">
+
+
+#### Transaction
+- 모두 성공 해야 하는 일련의 과정
+- 실패시 진행 초기 단계로 돌아간다.(롤백)
+- @Transactional // 해당 메서드를 트랜잭션으로 묶는다 (Service method)

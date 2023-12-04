@@ -3,6 +3,7 @@ package com.example.firstproject.api;
 import com.example.firstproject.Repository.ArticleRepository;
 import com.example.firstproject.dto.ArticleForm;
 import com.example.firstproject.entity.Article;
+import com.example.firstproject.service.ArticleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,8 +17,59 @@ import java.util.List;
 @Slf4j
 public class ArticleApiController {
 
+    @Autowired // ID -> 생성 객체를 가져와 연결
+    private ArticleService articleService;
+
+    @GetMapping("/articles")
+    public List<Article> index(){
+        return articleService.index();
+    }
+
+    @GetMapping("/articles/{id}")
+    public Article show(@PathVariable Long id){
+        return articleService.show(id);
+    }
+
+    @PostMapping("/articles")
+    public ResponseEntity<Article> create(@RequestBody ArticleForm dto){
+        Article create = articleService.create(dto);
+        return (create != null)?
+                ResponseEntity.ok(create) :
+                ResponseEntity.badRequest().build();
+    }
+
+    @PatchMapping("/articles/{id}")
+    public ResponseEntity<Article> update(@PathVariable Long id, @RequestBody ArticleForm dto){
+        Article updated = articleService.update(id, dto);
+        return (updated != null) ? ResponseEntity.ok(updated) : ResponseEntity.badRequest().build();
+    }
+
+    @DeleteMapping("/articles/{id}")
+    public ResponseEntity<Article> delete(@PathVariable Long id){
+        Article deleted= articleService.delete(id);
+        return (deleted != null) ? ResponseEntity.ok(deleted) : ResponseEntity.badRequest().build() ;
+    }
+
+    // 트랜잭션 -> 실패 -> 롤백
+
+    @PostMapping("transaction-test")
+    public ResponseEntity<List<Article>> transactionTest(@RequestBody List<ArticleForm> dtos){
+        List<Article>createList = articleService.createArticles(dtos);
+
+        return (createList !=null)?
+                ResponseEntity.ok(createList) :
+                ResponseEntity.badRequest().build();
+    }
+
+
+
+    /*
+
+    old_code
+
     @Autowired // DI
     private ArticleRepository articleRepository;
+
     // get
     @GetMapping("/articles")
     public List<Article> index(){
@@ -78,4 +130,5 @@ public class ArticleApiController {
         articleRepository.deleteById(id);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
+    */
 }
