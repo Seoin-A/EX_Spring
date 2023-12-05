@@ -18,7 +18,8 @@
    10. [CRUD SQL query](#10-sql-query)
 5. [REST API & JSON](#rest-api--json)
 6. [HTTP & RestController](#http--restcontroller)
-7. [Service 계층과 Transaction](#)
+7. [Service 계층과 Transaction](#service-계층과-transaction)
+8. [Test](#test)
 
 
 ## Web Service 동작원리
@@ -518,7 +519,7 @@
     <br>
 
 
-## Service 계층과 Transaction   
+## Service 계층과 Transaction
 
 #### Service 
 - Controller Repository 사이에 위치하는 계층
@@ -531,3 +532,47 @@
 - 모두 성공 해야 하는 일련의 과정
 - 실패시 진행 초기 단계로 돌아간다.(롤백)
 - @Transactional // 해당 메서드를 트랜잭션으로 묶는다 (Service method)
+
+
+## Test
+- 프로그램의 품질 검증을 위한 것으로 의도대로 프로그램이 동작하는지를 검증하는 것
+- TDD : 테스트 코드를 먼저 만들고, 이를 통과하는 최소한의 코드로 시작해 점진적으로 개선 및 확장해나가는 개발 방식
+
+    <img src="img/img_23.png" width="800" height="400">
+
+1. Test 과정 
+   1. 예상 시나리오 작성
+   2. 실제 코드 비교
+   3. 검증
+   4. 디버깅 및 리팩토링
+      <img src="img/img_24.png" width="800" height="350">
+
+2. TestCase
+   1. select
+      - index(전체 목록 가져오기)
+      - show_성공(존재하는_id_입력)
+      - show_실패(존재하지 않는 id 입력)
+   
+   2. insert
+      - create_성공(title과 content만 있는 dto 입력)
+      - create_실패(id가 포함된 dto 입력) 
+
+   3. update
+      - update_성공(존재하는 id와 title_content 가 있는 dto 입력)
+      - update_성공(존재하는 id와 title만 있는 dto 입력)
+      - update_실패(존재하지 않는 id의 dto 입력)
+      - update_실패(id가 다른 dto 입력)
+
+   4. delete
+      - delete_성공(존재하는 id 입력)
+      - delete_실패(존재하지 않는 id 입력)
+    
+    <br>
+   
+    <img src="img/img_25.png" width="800" height="400">    
+
+
+
+
+
+
