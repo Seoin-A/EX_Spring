@@ -5,4 +5,17 @@
       <sourceFolder url="file://$MODULE_DIR$/../../firstproject/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
     </content>
   </component>
+  <component name="FacetManager">
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping>
+          <factory-entry name="com.example.firstproject.main" value="09aa19da-d0b5-453b-949f-42454a619b8d" />
+          <factory-entry name="entityManagerFactory" value="09aa19da-d0b5-453b-949f-42454a619b8d" />
+        </datasource-mapping>
+        <naming-strategy-map />
+      </configuration>
+    </facet>
+  </component>
 </module>

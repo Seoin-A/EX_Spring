@@ -21,6 +21,7 @@ https://www.inflearn.com/users/85824/@hongpark
 6. [HTTP & RestController](#http--restcontroller)
 7. [Service 계층과 Transaction](#service-계층과-transaction)
 8. [Test](#test)
+9. [댓글 처리](#댓글)
 
 
 ## Web Service 동작원리
@@ -573,8 +574,45 @@ https://www.inflearn.com/users/85824/@hongpark
    
     <img src="img/img_25.png" width="800" height="400">    
 
+<br>
+
+## 댓글
+1. CommentEntity
+    - 게시글과 댓글의 관계는 1:N 관계
+    - ManyToOne : 해당 댓글 엔티티 여러개가, 하나의 Article의 대표값을 저장
+    - @JoinColumn(name = "article_id") : "articleid" 컬럼에 Article의 대표값을 저장
+    - ex
+        ```
+        -- 4번 게시글의 모든 댓글 출력
+        select *  from comment where article_id = 4;
+        ```
+2. CommentRepository
+   - Paging & Sorting 기능 내장
+
+3. Test
+    1. TestCase
+       - FindById
+         - Case 1 : 4번 게시글의 모든 댓글 조회 
+         - Case 2 : 1번 댓글의 모든 댓글 조회
+         - Case 3 : 9번 게시글의 모든 댓글 조회
+         - Case 4 : 9999번 게시글의 모든 댓글 조회
+         - Case 5 : -1번 게시글의 모든 댓글 조회
+         - 결과
+         
+           <img src="img/img_26.png" width="800" height="150">
+        
 
 
 
 
+## Error 정리
+<details>
+    <summary> 자세히 </summary>
+   
+1. 댓글
+    - commentEntity의 Article에서 ManyToOne이 아닌 OnToMany 오타 발생    
+       &rarr; 컨네이너 에러 발생됨을 확인
+        
 
+        
+</details>
