@@ -600,7 +600,17 @@ https://www.inflearn.com/users/85824/@hongpark
          - 결과
          
            <img src="img/img_26.png" width="800" height="150">
-        
+   
+       - FindByNickname
+         - Case 1 : 박의 모든 댓글 조회
+         - Case 2 : 김의 모든 댓글 조회
+         - Case 2 : 김의 모든 댓글 조회
+         - Case 3 : null의 모든 댓글 조회
+         - Case 4 : ""의 모든 댓글 조회
+         - Case 5 : "i"의 모든 댓글 조회
+         - 결과
+         
+           <img src="img/img_27.png" width="800" height="200">
 
 
 
