@@ -589,6 +589,16 @@ https://www.inflearn.com/users/85824/@hongpark
 2. CommentRepository
    - Paging & Sorting 기능 내장
 
+3. Controller
+    - 조회, 생성, 수정, 삭제 : 서비스위임 -> 결과 응답 과정
+
+4. Service
+   - 조회, 생성, 수정, 삭제 
+     1. 해당 게시글 및 댓글 조회 예외 발생
+     2. 댓글 엔티티 생성 (생성)
+     3. 엔티티 저장, 수정, 삭제 (생성, 수정, 삭제)
+     4. DTO 변환 및 반환 (조회, 생성, 수정, 삭제)
+
 3. Test
     1. TestCase
        - FindById
@@ -621,8 +631,10 @@ https://www.inflearn.com/users/85824/@hongpark
    
 1. 댓글
     - commentEntity의 Article에서 ManyToOne이 아닌 OnToMany 오타 발생    
-       &rarr; 컨네이너 에러 발생됨을 확인
-        
+       &rarr; 컨네이너 에러 발생됨을 확인   
+   
+    - Json property를 article_id로 보내었는데 Dto는 articleId인 경우 오류 발생
+      &rarr; #Jsonproperty("article_id)를 추가함
 
         
 </details>
