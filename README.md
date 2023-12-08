@@ -669,7 +669,7 @@ https://www.inflearn.com/users/85824/@hongpark
 <br>
 
 #### 3. AOP. 관점 지향 프로그래밍
-1. AOP 
+- AOP 
    - 부가 기능을 특정 지점에 잘라넣는 기법
    - 특정 로직을 주입
    - 종류 
@@ -681,6 +681,19 @@ https://www.inflearn.com/users/85824/@hongpark
      - @AfterReturning : 대상 실행 후 수행 (정상 수행 시)
      - @AfterThrowing : 대상 실행 후 수행 (예외 발생 시)
      - @Around : 대상 실행 전후로 수행
+
+- 실습 
+  - [annotation](../springEx/firstproject/firstproject/src/main/java/com/example/firstproject/annotation)
+  - [aop](../springEx/firstproject/firstproject/src/main/java/com/example/firstproject/aop)
+
+<br>
+
+
+#### 4. ObjectMapper
+
+- Jackson lib
+- ObjectMapper.writeValueAsString(JSON으로 만들 클래스 타입) : java -> json
+- ObjectMapper.readValue(JSON, JSON으로 만들 클래스 타입) : json -> java
 
 
    
