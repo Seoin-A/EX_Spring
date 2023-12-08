@@ -37,7 +37,7 @@ public class ArticleController {
     /* 데이터 생성*/
     @PostMapping("/articles/create")
     public String createArticle(ArticleForm form){
-//        System.out.println("form = " + form.toString()); -> 로깅 기능으로 대체
+//      System.out.println("form = " + form.toString()); -> 로깅 기능으로 대체
         log.info(form.toString());
         // 1. Dto 변환 -> Entity로
         Article article = form.toEntity();

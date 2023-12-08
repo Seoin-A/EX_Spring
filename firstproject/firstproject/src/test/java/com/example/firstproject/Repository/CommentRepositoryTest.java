@@ -19,7 +19,6 @@ class CommentRepositoryTest {
 
     @Autowired CommentRepository commentRepository;
 
-
     @Test
     @DisplayName("특정 게시글의 모든 댓글 조회") // 테스트 결과에 보여줄 name
     void findByArticleId() {

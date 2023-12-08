@@ -2,9 +2,11 @@ package com.example.firstproject.service;
 
 import com.example.firstproject.Repository.ArticleRepository;
 import com.example.firstproject.Repository.CommentRepository;
+import com.example.firstproject.annotation.RunningTime;
 import com.example.firstproject.dto.CommentDto;
 import com.example.firstproject.entity.Article;
 import com.example.firstproject.entity.Comment;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class CommentService {
     @Autowired
     private CommentRepository commentRepository;
@@ -46,6 +49,7 @@ public class CommentService {
 
     @Transactional
     public CommentDto create(Long id, CommentDto dto) {
+        /* 핵심 로직*/
         // 게시글 조회 및 예외 발생
         Article article = articleRepository.findById(id)
                 .orElseThrow(()-> new IllegalArgumentException("댓글 생성 실패! 대상 게시글이 없습니다."));
@@ -58,10 +62,14 @@ public class CommentService {
 
         // Dto 변경하여 반환
         return CommentDto.createDto(created);
+        /* 핵심 로직*/
+
     }
 
     @Transactional
     public CommentDto update(Long id, CommentDto dto) {
+
+
         // 댓글 조회 및 예외 발생
         Comment target = commentRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("댓글 수정 실패! 해당 댓글이 없습니다"));
         // 댓글 수정
@@ -74,6 +82,7 @@ public class CommentService {
     }
 
     @Transactional
+    @RunningTime
     public CommentDto delete(Long id) {
         // 댓글 조회 및 예외 발생
         Comment target = commentRepository.findById(id).orElseThrow(()->new IllegalArgumentException("댓글 수정 실패! 해당 댓글이 없습니다"));
