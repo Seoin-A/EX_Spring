@@ -13,8 +13,8 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class DebuggingAspect {
 
-    // 대상 메서드 선택 : CommentService#create()
-    @Pointcut("execution(* com.example.firstproject.service.CommentService.*(..))")
+    // 대상 메서드 선택 : api 패키지의 모든 메서드
+    @Pointcut("execution(* com.example.firstproject.api.*.*(..))")
     private void cut(){
 
     }

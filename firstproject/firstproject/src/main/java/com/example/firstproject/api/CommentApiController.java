@@ -1,4 +1,4 @@
-package com.example.firstproject.controller;
+package com.example.firstproject.api;
 
 import com.example.firstproject.dto.CommentDto;
 import com.example.firstproject.entity.Comment;
