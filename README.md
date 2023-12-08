@@ -648,7 +648,7 @@ https://www.inflearn.com/users/85824/@hongpark
     spring.jpa.hibernate.ddl-auto=update
     ```
 
-<img src="img/img_28.png" height="500" width="900">
+    <img src="img/img_28.png" height="500" width="900">
 
 
 
