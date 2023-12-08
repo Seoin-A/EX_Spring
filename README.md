@@ -683,8 +683,8 @@ https://www.inflearn.com/users/85824/@hongpark
      - @Around : 대상 실행 전후로 수행
 
 - 실습 
-  - [annotation](../firstproject/firstproject/src/main/java/com/example/firstproject/annotation)
-  - [aop](../firstproject/firstproject/src/main/java/com/example/firstproject/aop)
+  - [annotation](firstproject/firstproject/src/main/java/com/example/firstproject/annotation)
+  - [aop](firstproject/firstproject/src/main/java/com/example/firstproject/annotationaop)
 
 <br>
 
