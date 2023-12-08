@@ -22,6 +22,7 @@ https://www.inflearn.com/users/85824/@hongpark
 7. [Service 계층과 Transaction](#service-계층과-transaction)
 8. [Test](#test)
 9. [댓글 처리](#댓글)
+10. [스프링 핵심 개념](#spring-핵심-개념)
 
 
 ## Web Service 동작원리
@@ -622,7 +623,51 @@ https://www.inflearn.com/users/85824/@hongpark
          
            <img src="img/img_27.png" width="800" height="200">
 
+    
+## Spring 핵심 개념
+#### 1. 외부 DB 연동
+1. DBMS
+2. DMBS Driver
+   ```build.gradle
+   runtimeOnly 'org.postgresql:postgresql'
+   ```
+3. DB Information
+   ```properties
+    # PostGreSql 연동
+    spring.datasource.url=jdbc:postgresql://localhost:5432/firstproject_db
+    spring.datasource.username=postgres
+    spring.datasource.password=postgres
+    
+    # 초기화 정보 위치
+    spring.sql.init.data-locations=classpath:data.sql
+    
+    # 서버 실행시 data.sql을 항상 수행(always) # 초기화하지 않겠다
+    spring.sql.init.mode=never
+    
+    # 서버가 켜질 때 테이블과 데이터가 생성되고 꺼질 때 데이터를 모두 DROP한다 create-drop
+    spring.jpa.hibernate.ddl-auto=update
+    ```
 
+<img src="img/img_28.png" height="500" width="900">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
 
 
 ## Error 정리
@@ -638,3 +683,5 @@ https://www.inflearn.com/users/85824/@hongpark
 
         
 </details>
+
+
