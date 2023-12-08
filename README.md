@@ -22,7 +22,7 @@ https://www.inflearn.com/users/85824/@hongpark
 7. [Service 계층과 Transaction](#service-계층과-transaction)
 8. [Test](#test)
 9. [댓글 처리](#댓글)
-10. [스프링 핵심 개념](#spring-핵심-개념)
+10. [Spring 핵심 개념](#spring-핵심-개념)
 
 
 ## Web Service 동작원리
@@ -599,8 +599,14 @@ https://www.inflearn.com/users/85824/@hongpark
      2. 댓글 엔티티 생성 (생성)
      3. 엔티티 저장, 수정, 삭제 (생성, 수정, 삭제)
      4. DTO 변환 및 반환 (조회, 생성, 수정, 삭제)
+5. View
+    - RestApi 통신 방법
+        ```javascript
+      
+        ```
 
-3. Test
+
+6. Test
     1. TestCase
        - FindById
          - Case 1 : 4번 게시글의 모든 댓글 조회 
@@ -647,12 +653,37 @@ https://www.inflearn.com/users/85824/@hongpark
     # 서버가 켜질 때 테이블과 데이터가 생성되고 꺼질 때 데이터를 모두 DROP한다 create-drop
     spring.jpa.hibernate.ddl-auto=update
     ```
-
     <img src="img/img_28.png" height="500" width="900">
 
+#### 2. IoC와 DI
+1. IoC Container 
+   - 핵심 객체를 관리하는 창고
+   - Controller, Service, Repository등의 다양한 객체들을 만들고 관리
+   - 프로그램의 흐름이 개발자의 코드가 아닌 외부에 의해 제어
+
+2. DI 
+   - 필요 객체를 외부에서 또 다른 객체로 주입하는 방식
+   - 동작에 필요한 객체를 외부에서 받아오는 방식
+   - @Autowire를 사용하기 위해서 클래스에 @Component추가
+
+<br>
+
+#### 3. AOP. 관점 지향 프로그래밍
+1. AOP 
+   - 부가 기능을 특정 지점에 잘라넣는 기법
+   - 특정 로직을 주입
+   - 종류 
+     - @Transactional : 문제 발생 시 데이터를 롤백
+     - @Aspect : 부가 기능 주입을 위한 AOP 클래스 선언
+     - @Pointcut : 주입 대상 지정
+     - @Before : 대상 실행 이전에 수행
+     - @After : 대상 실행 후 수행
+     - @AfterReturning : 대상 실행 후 수행 (정상 수행 시)
+     - @AfterThrowing : 대상 실행 후 수행 (예외 발생 시)
+     - @Around : 대상 실행 전후로 수행
 
 
-
+   
 
 
 
