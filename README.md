@@ -1,6 +1,5 @@
 # EX_Spring  (Success)
-출처: [개념은 호옹~, 실습 빡] 스프링 부트, 입문!-흥팍    
-https://www.inflearn.com/users/85824/@hongpark
+
 
 # 목차
 1. [WebService 동작 원리](#web-service-동작원리)
@@ -695,22 +694,6 @@ https://www.inflearn.com/users/85824/@hongpark
 - ObjectMapper.writeValueAsString(JSON으로 만들 클래스 타입) : java -> json
 - ObjectMapper.readValue(JSON, JSON으로 만들 클래스 타입) : json -> java
 
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <br>
 
 
@@ -728,4 +711,7 @@ https://www.inflearn.com/users/85824/@hongpark
         
 </details>
 
+
+출처: [개념은 호옹~, 실습 빡] 스프링 부트, 입문!-흥팍    
+https://www.inflearn.com/users/85824/@hongpark
 
